@@ -17,18 +17,6 @@
                 ar-modes="webxr scene-viewer quick-look" 
                 environment-image="neutral">   
   </model-viewer>
- <script>
-        async function checkARCoreCompatibility() {
-            const modelViewer = document.getElementById('model-viewer');
-            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-            if (!isARCoreSupported) {
-                modelViewer.removeAttribute('ar');
-                modelViewer.removeAttribute('ar-modes');
-                alert('Your device is not compatible with AR features. You can still view the 3D model.');
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
-    </script>
+ 
    </body>
 </html>

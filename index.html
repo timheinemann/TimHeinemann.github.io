@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIM HEINEMANN - SPIKE OBJECT</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  </head>
-  <body>
-<H2>SPIKE OBJECT</H2>
-  <model-viewer src="new project.glb"
-                ios-src="new project.usdz"
-                alt="SPIKE OBJECT"
-                ar
-                auto-rotate
-                camera-controls
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral">   
-  </model-viewer>
- 
-   </body>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>SPIKE OBJECT</h2>
+    <model-viewer src="new project.glb"
+                  ios-src="new project.usdz"
+                  alt="SPIKE OBJECT"
+                  ar
+                  auto-rotate
+                  camera-controls
+                  ar-modes="webxr scene-viewer quick-look" 
+                  environment-image="neutral">   
+    </model-viewer>
+</body>
 </html>

@@ -54,23 +54,46 @@
             height: 20px;
             margin-right: 10px;
         }
+        model-viewer {
+            width: 100%;
+            height: calc(100vh - 120px); /* Adjusting for header and footer */
+            max-height: 80vh; /* Ensures it doesn't overflow on small screens */
+        }
+        .ar-button-text {
+            position: relative;
+            display: inline-block;
+        }
+        .ar-button-text::after {
+            content: 'CLICK HERE!';
+            display: block;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 0.8em;
+            color: white;
+            position: absolute;
+            bottom: -20px; /* Adjust this value if needed */
+            left: 50%;
+            transform: translateX(-50%);
+        }
     </style>
 </head>
 <body>
     <h2>JUST A CIRCLE</h2>
     <h3>TIM HEINEMANN</h3>
-    <model-viewer src="just a circle.glb"
-                  ios-src="just a circle.usdz"
-                  alt="JUST A CIRCLE"
-                  ar
-                  auto-rotate
-                  camera-controls
-                  ar-modes="webxr scene-viewer quick-look" 
-                  environment-image="neutral">   
-    </model-viewer>
+    <div class="ar-button-text">
+        <model-viewer src="just a circle.glb"
+                      ios-src="just a circle.usdz"
+                      alt="JUST A CIRCLE"
+                      ar
+                      auto-rotate
+                      camera-controls
+                      ar-modes="webxr scene-viewer quick-look"
+                      environment-image="neutral">
+        </model-viewer>
+    </div>
     <p>
         THIS IS JUST A CIRCLE OF RANDOM OBJECTS.<br><br>
-        I TRIED TO 3D SCAN AN AREA IN AND MAKE SOMETHING BEAUTIFUL<br>
+        I TRIED TO 3D SCAN AN AREA AND MAKE SOMETHING BEAUTIFUL<br>
         - DIDN’T WORK OUT AS PLANNED.<br><br>
         STARTED CREATING RANDOM OBJECTS <br>
         - WAY MORE FUN!<br><br>

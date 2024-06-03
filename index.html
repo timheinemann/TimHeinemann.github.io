@@ -83,7 +83,7 @@
     <h2>JUST A CIRCLE</h2>
     <h3>TIM HEINEMANN</h3>
     <div class="ar-button-text">
-        <model-viewer src="JUST A CIRCLE.glb"
+        <model-viewer id="model-viewer" src="JUST A CIRCLE.glb"
                       ios-src="JUST A CIRCLE.usdz"
                       alt="JUST A CIRCLE"
                       ar
@@ -116,5 +116,17 @@
     <a href="https://www.instagram.com/tim.hnmnn" target="_blank">
         <img src="Instagram_logo_2016.svg.png" alt="Instagram Logo">Follow me on Instagram
     </a>
+    <script>
+        // Function to reload the model viewer element
+        function resetModelViewer() {
+            const modelViewer = document.getElementById('model-viewer');
+            const src = modelViewer.getAttribute('src');
+            modelViewer.removeAttribute('src');
+            modelViewer.setAttribute('src', src);
+        }
+
+        // Call the reset function if needed
+        resetModelViewer();
+    </script>
 </body>
 </html>

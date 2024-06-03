@@ -56,14 +56,16 @@
         }
         model-viewer {
             width: 50%;
-            height: 30vh;
+            height: 50vh; /* Increased height for better visibility */
+            margin-bottom: 20px; /* Added margin to separate from text */
         }
         .ar-button-text {
             position: relative;
             display: inline-block;
+            margin-bottom: 40px; /* Added margin to create space between button and text */
         }
         .ar-button-text::after {
-            content: '';
+            content: 'CLICK FOR AR EXPERIENCE';
             display: block;
             text-align: center;
             font-family: Arial, sans-serif;
@@ -80,8 +82,8 @@
     <h2>JUST A CIRCLE</h2>
     <h3>TIM HEINEMANN</h3>
     <div class="ar-button-text">
-        <model-viewer src="new project.glb"
-                      ios-src="new project.usdz"
+        <model-viewer src="JUST A CIRCLE.glb"
+                      ios-src="JUST A CIRCLE.usdz"
                       alt="JUST A CIRCLE"
                       ar
                       auto-rotate
@@ -93,7 +95,7 @@
     <p>
         THIS IS JUST A CIRCLE OF RANDOM OBJECTS.<br><br>
         I TRIED TO 3D SCAN AN AREA AND MAKE SOMETHING BEAUTIFUL<br>
-        - UNFORTUNATELY IT DIDN’T WORK OUT AS PLANNED.<br><br>
+        - UNFORTUNATELY IT DIDN’T WORK OUT AS PLANNED<br><br>
         I STARTED CREATING RANDOM OBJECTS <br>
         - JUST FOR FUN<br><br>
         I DON’T KNOW WHAT THIS IS SUPPOSED TO BE<br>
@@ -106,7 +108,4 @@
     </p>
     <a href="https://www.instagram.com/tim.hnmnn" target="_blank">
         <img src="Instagram_logo_2016.svg.png" alt="Instagram Logo">Follow me on Instagram
-    </a>
-</body>
-</html>
-
+  

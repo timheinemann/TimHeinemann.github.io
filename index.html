@@ -58,6 +58,7 @@
             width: 50%;
             height: 50vh; /* Increased height for better visibility */
             margin-bottom: 20px; /* Added margin to separate from text */
+            background-color: #f0f0f0; /* Added background color for better contrast */
         }
         .ar-button-text {
             position: relative;
@@ -90,6 +91,12 @@
                       camera-controls
                       ar-modes="webxr scene-viewer quick-look"
                       environment-image="neutral">
+            <div slot="poster" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+                Loading AR model...
+            </div>
+            <div slot="fallback" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+                AR model cannot be loaded.
+            </div>
         </model-viewer>
     </div>
     <p>
@@ -108,4 +115,6 @@
     </p>
     <a href="https://www.instagram.com/tim.hnmnn" target="_blank">
         <img src="Instagram_logo_2016.svg.png" alt="Instagram Logo">Follow me on Instagram
-  
+    </a>
+</body>
+</html>

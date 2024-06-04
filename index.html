@@ -24,10 +24,32 @@
             text-transform: uppercase;
             font-size: 2em;
         }
+        h3 {
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1.5em;
+        }
         p {
             text-align: center;
             font-size: 1em;
             margin: 10px 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 1em;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
         }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
@@ -40,6 +62,7 @@
 </head>
 <body>
     <h2>JUST A CIRCLE</h2>
+    <h3>TIM HEINEMANN</h3>
     <model-viewer id="model-viewer"
                   src="justacircle.glb"
                   ios-src="justacircle.usdz"
@@ -68,6 +91,9 @@
         - THIS IS JUST A CIRCLE<br><br>
         THIS IS JUST A CIRCLE OF RANDOM OBJECTS.
     </p>
+    <a href="https://www.instagram.com/tim.hnmnn" target="_blank">
+        <img src="Instagram_logo_2016.svg.png" alt="Instagram Logo">Follow me on Instagram
+    </a>
     <script>
         // Function to reload the model viewer element
         function resetModelViewer() {

@@ -56,14 +56,14 @@
         }
         model-viewer {
             width: 50%;
-            height: 50vh; /* Increased height for better visibility */
-            margin-bottom: 20px; /* Added margin to separate from text */
-            background-color: #f0f0f0; /* Added background color for better contrast */
+            height: 50vh;
+            margin-bottom: 20px;
+            background-color: #f0f0f0;
         }
         .ar-button-text {
             position: relative;
             display: inline-block;
-            margin-bottom: 40px; /* Added margin to create space between button and text */
+            margin-bottom: 40px;
         }
         .ar-button-text::after {
             content: 'CLICK FOR AR EXPERIENCE';
@@ -73,7 +73,7 @@
             font-size: 0.8em;
             color: white;
             position: absolute;
-            bottom: -20px; /* Adjust this value if needed */
+            bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -122,6 +122,15 @@
             modelViewer.removeAttribute('src');
             modelViewer.setAttribute('src', src);
         }
+
+        // Check if the model viewer script has loaded
+        window.addEventListener('DOMContentLoaded', (event) => {
+            if (!window.customElements.get('model-viewer')) {
+                console.error('model-viewer script failed to load.');
+            } else {
+                console.log('model-viewer script loaded successfully.');
+            }
+        });
 
         // Call the reset function if needed
         resetModelViewer();

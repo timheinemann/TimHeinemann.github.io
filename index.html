@@ -1,46 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunsthalle AR Show!</title>
+    <title>JUST A CIRCLE</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-     <style>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: 100vh;
+        }
+        h2 {
+            margin-top: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+        p {
+            text-align: center;
+            font-size: 1em;
+            margin: 10px 20px;
+        }
         model-viewer {
             width: 100%; /* 100% of the parent's width */
             height: 80vh; /* 80% of the viewport height */
             display: block;
             margin: auto;
+            background-color: #f0f0f0;
         }
     </style>
-  </head>
-  <body>
-<H2>just a circle</H2>
-  <model-viewer 
-                id="model-viewer"
-                src="justacircle.glb"
-                ios-src="justacircle.usdz"
-                alt="Kunsthalle AR Show"
-                ar
-                ar-modes="webxr scene-viewer quick-look" 
-                environment-image="neutral" 
-                auto-rotate
-                camera-controls
-                animation-name="CubeAction" 
-                animation-loop>  
-  </model-viewer>
- <script>
-        async function checkARCoreCompatibility() {
+</head>
+<body>
+    <h2>JUST A CIRCLE</h2>
+    <model-viewer id="model-viewer"
+                  src="justacircle.glb"
+                  ios-src="justacircle.usdz"
+                  alt="JUST A CIRCLE"
+                  ar
+                  ar-modes="webxr scene-viewer quick-look"
+                  environment-image="neutral"
+                  auto-rotate
+                  camera-controls>
+        <div slot="poster" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+            Loading AR model...
+        </div>
+        <div slot="fallback" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+            AR model cannot be loaded.
+        </div>
+    </model-viewer>
+    <p>
+        THIS IS JUST A CIRCLE OF RANDOM OBJECTS.<br><br>
+        I STARTED CREATING RANDOM OBJECTS<br>
+        - JUST FOR FUN<br><br>
+        I DON’T KNOW WHAT THIS IS SUPPOSED TO BE<br>
+        - THIS IS JUST A CIRCLE<br><br>
+        IT HAS NO DEEPER MEANING<br>
+        - THIS IS JUST A CIRCLE<br><br>
+        WHAT YOU SEE IS WHAT IT IS<br>
+        - THIS IS JUST A CIRCLE<br><br>
+        THIS IS JUST A CIRCLE OF RANDOM OBJECTS.
+    </p>
+    <script>
+        // Function to reload the model viewer element
+        function resetModelViewer() {
             const modelViewer = document.getElementById('model-viewer');
-            const isARCoreSupported = await navigator.xr.isSessionSupported('immersive-ar');
-            if (!isARCoreSupported) {
-                modelViewer.removeAttribute('ar');
-                modelViewer.removeAttribute('ar-modes');
-                alert('Your device is not compatible with AR features. You can still view the 3D model.');
-            }
+            const src = modelViewer.getAttribute('src');
+            modelViewer.removeAttribute('src');
+            modelViewer.setAttribute('src', src);
         }
 
-        document.addEventListener('DOMContentLoaded', checkARCoreCompatibility);
+        // Check if the model viewer script has loaded
+        window.addEventListener('DOMContentLoaded', (event) => {
+            if (!window.customElements.get('model-viewer')) {
+                console.error('model-viewer script failed to load.');
+            } else {
+                console.log('model-viewer script loaded successfully.');
+            }
+        });
+
+        // Call the reset function if needed
+        resetModelViewer();
     </script>
-   </body>
+</body>
 </html>

@@ -52,11 +52,11 @@
             margin-right: 10px;
         }
         model-viewer {
-            width: 100%; /* 100% of the parent's width */
-            height: 80vh; /* 80% of the viewport height */
+            width: 80%; /* 80% of the parent's width */
+            height: 70vh; /* 70% of the viewport height */
             display: block;
             margin: auto;
-            background-color: #f0f0f0;
+            background-color: black;
         }
     </style>
 </head>
@@ -72,10 +72,10 @@
                   environment-image="neutral"
                   auto-rotate
                   camera-controls>
-        <div slot="poster" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div slot="poster" style="color: white; background: black; height: 100%; display: flex; align-items: center; justify-content: center;">
             Loading AR model...
         </div>
-        <div slot="fallback" style="color: black; background: #f0f0f0; height: 100%; display: flex; align-items: center; justify-content: center;">
+        <div slot="fallback" style="color: white; background: black; height: 100%; display: flex; align-items: center; justify-content: center;">
             AR model cannot be loaded.
         </div>
     </model-viewer>
